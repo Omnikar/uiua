@@ -1642,9 +1642,9 @@ enum F64Rep {
     MapEmpty,
     #[serde(rename = "tomb")]
     MapTombstone,
-    #[serde(rename = "∞")]
+    #[serde(rename = "inf")]
     Infinity,
-    #[serde(rename = "-∞")]
+    #[serde(rename = "neg_inf")]
     NegInfinity,
     #[serde(untagged)]
     Num(f64),
