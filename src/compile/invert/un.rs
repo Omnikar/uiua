@@ -1497,6 +1497,8 @@ inverse!(ImplPrimPat, input, _, ImplPrim(prim, span), {
         Retropose => ImplPrim(Retropose, span),
         MvImpl(mode) => ImplPrim(UnMv(mode), span),
         UnMv(mode) => ImplPrim(MvImpl(mode), span),
+        ValidateImpl(side) => ImplPrim(UnValidateImpl(side), span),
+        UnValidateImpl(side) => ImplPrim(ValidateImpl(side), span),
         StackN { n, inverse } => ImplPrim(
             StackN {
                 n,

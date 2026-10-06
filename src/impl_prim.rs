@@ -288,6 +288,7 @@ impl_primitive!(
     (2(0), ValidateTypeConsume),
     (2(0), TestAssert, Impure),
     (2, ValidateImpl(Option<SubSide>)),
+    (1(2), UnValidateImpl(Option<SubSide>)),
     (1, MvImpl(MvMode)),
     (2, RegressiveProduct),
     (2, LeftContraction),

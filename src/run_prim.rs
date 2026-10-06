@@ -1390,6 +1390,12 @@ impl ImplPrimitive {
                 }
                 env.push(val);
             }
+            &ImplPrimitive::UnValidateImpl(_side) => {
+                let value = env.top()?;
+                let spec = Type::of_val(value);
+                let spec_val = spec.spec_val();
+                env.push(spec_val);
+            }
             &ImplPrimitive::MvImpl(mode) => {
                 let mv = env.pop(1)?.multivector(mode, env)?;
                 env.push(mv);
